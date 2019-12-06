@@ -1,0 +1,45 @@
+﻿<Window x:Class="trucking_app.z_info_penalties"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:trucking_app"
+        mc:Ignorable="d"
+        Title="Информация о штрафах" Height="350" Width="400"
+        WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" ResizeMode="NoResize">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".4*"/>
+            <ColumnDefinition Width=".6*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"
+                   Margin="5">Штрафы:</TextBlock>
+        <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"
+                   Margin="5">ДТП:</TextBlock>
+        <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"
+                   Margin="5">Потеря груза:</TextBlock>
+        <TextBlock Grid.Row="3" Grid.Column="0" VerticalAlignment="Center"
+                   Margin="5">Поврежденный груз:</TextBlock>
+        <TextBlock Grid.Row="4" Grid.Column="0" VerticalAlignment="Center"
+                   Margin="5">Другое:</TextBlock>
+
+        <TextBlock Grid.Row="0" Grid.Column="1" VerticalAlignment="Center"
+                   Margin="5" x:Name="fineTB"></TextBlock>
+        <TextBlock Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"
+                   Margin="5" x:Name="accidTB"></TextBlock>
+        <TextBlock Grid.Row="2" Grid.Column="1" VerticalAlignment="Center"
+                   Margin="5" x:Name="cargoLostTB"></TextBlock>
+        <TextBlock Grid.Row="3" Grid.Column="1" VerticalAlignment="Center"
+                   Margin="5" x:Name="cargoBrokenTB"></TextBlock>
+        <TextBlock Grid.Row="4" Grid.Column="1" VerticalAlignment="Center"
+                   Margin="5" x:Name="otherTB"></TextBlock>
+    </Grid>
+</Window>

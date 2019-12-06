@@ -1,0 +1,400 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DDDA9FC0-9724-4C28-905F-6E3C91976D2F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>trucking_app</RootNamespace>
+    <AssemblyName>trucking_app</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GeoAPI, Version=1.7.5.0, Culture=neutral, PublicKeyToken=a1a0da7def465678, processorArchitecture=MSIL">
+      <HintPath>..\packages\GeoAPI.Core.1.7.5\lib\net45\GeoAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="NetTopologySuite, Version=1.15.0.0, Culture=neutral, PublicKeyToken=f580a05016ebada1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NetTopologySuite.Core.1.15.0\lib\net45\NetTopologySuite.dll</HintPath>
+    </Reference>
+    <Reference Include="NetTopologySuite.IO.PostGis, Version=1.15.0.0, Culture=neutral, PublicKeyToken=f580a05016ebada1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NetTopologySuite.IO.PostGis.1.15.0\lib\net45\NetTopologySuite.IO.PostGis.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql, Version=4.0.4.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.4.0.4\lib\net451\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql.NetTopologySuite, Version=4.0.4.1, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.NetTopologySuite.4.0.4.1\lib\net45\Npgsql.NetTopologySuite.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.1\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="ArrayString.cs" />
+    <Compile Include="Data\Branch.cs" />
+    <Compile Include="Data\CargoUnit.cs" />
+    <Compile Include="Data\Employee.cs" />
+    <Compile Include="Data\Equipment.cs" />
+    <Compile Include="Data\Good.cs" />
+    <Compile Include="Data\LoadUnload.cs" />
+    <Compile Include="Data\Penalties.cs" />
+    <Compile Include="Data\Position.cs" />
+    <Compile Include="Data\PriceList.cs" />
+    <Compile Include="Data\PublicData.cs" />
+    <Compile Include="Data\Route.cs" />
+    <Compile Include="Data\Shipping.cs" />
+    <Compile Include="Data\TechService.cs" />
+    <Compile Include="w_add_branch.xaml.cs">
+      <DependentUpon>w_add_branch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="w_add_employee.xaml.cs">
+      <DependentUpon>w_add_employee.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="w_add_equipment.xaml.cs">
+      <DependentUpon>w_add_equipment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="w_add_loadunloadop.xaml.cs">
+      <DependentUpon>w_add_loadunloadop.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="w_add_position.xaml.cs">
+      <DependentUpon>w_add_position.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="wDG.xaml.cs">
+      <DependentUpon>wDG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="w_add_shipping.xaml.cs">
+      <DependentUpon>w_add_shipping.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="w_add_techservice.xaml.cs">
+      <DependentUpon>w_add_techservice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="w_cargo_content.xaml.cs">
+      <DependentUpon>w_cargo_content.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="w_distances.xaml.cs">
+      <DependentUpon>w_distances.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="w_info_routes.xaml.cs">
+      <DependentUpon>w_info_routes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="w_new_point.xaml.cs">
+      <DependentUpon>w_new_point.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="w_penalties_report.xaml.cs">
+      <DependentUpon>w_penalties_report.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="w_price_report.xaml.cs">
+      <DependentUpon>w_price_report.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="w_search_loadunloadop.xaml.cs">
+      <DependentUpon>w_search_loadunloadop.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="w_search_route.xaml.cs">
+      <DependentUpon>w_search_route.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="w_search_shipping.xaml.cs">
+      <DependentUpon>w_search_shipping.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="w_search_techservice.xaml.cs">
+      <DependentUpon>w_search_techservice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="w_search_branch.xaml.cs">
+      <DependentUpon>w_search_branch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="w_search_employee.xaml.cs">
+      <DependentUpon>w_search_employee.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="w_search_equipment.xaml.cs">
+      <DependentUpon>w_search_equipment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="w_search_position.xaml.cs">
+      <DependentUpon>w_search_position.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="w_selection_grid.xaml.cs">
+      <DependentUpon>w_selection_grid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="w_update_branch.xaml.cs">
+      <DependentUpon>w_update_branch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="w_update_employee.xaml.cs">
+      <DependentUpon>w_update_employee.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="w_update_equipment.xaml.cs">
+      <DependentUpon>w_update_equipment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="w_update_position.xaml.cs">
+      <DependentUpon>w_update_position.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="z_info_branch.xaml.cs">
+      <DependentUpon>z_info_branch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="z_info_cargo_content.xaml.cs">
+      <DependentUpon>z_info_cargo_content.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="z_info_employee.xaml.cs">
+      <DependentUpon>z_info_employee.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="z_info_equipment.xaml.cs">
+      <DependentUpon>z_info_equipment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="z_info_load_unload.xaml.cs">
+      <DependentUpon>z_info_load_unload.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="z_info_penalties.xaml.cs">
+      <DependentUpon>z_info_penalties.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="z_info_position.xaml.cs">
+      <DependentUpon>z_info_position.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="z_info_price.xaml.cs">
+      <DependentUpon>z_info_price.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="z_info_shipping.xaml.cs">
+      <DependentUpon>z_info_shipping.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="z_info_tech_service.xaml.cs">
+      <DependentUpon>z_info_tech_service.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="w_add_branch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="w_add_employee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="w_add_equipment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="w_add_loadunloadop.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="w_add_position.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="wDG.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="w_add_shipping.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="w_add_techservice.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="w_cargo_content.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="w_distances.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="w_info_routes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="w_new_point.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="w_penalties_report.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="w_price_report.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="w_search_loadunloadop.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="w_search_route.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="w_search_shipping.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="w_search_techservice.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="w_search_branch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="w_search_employee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="w_search_equipment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="w_search_position.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="w_selection_grid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="w_update_branch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="w_update_employee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="w_update_equipment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="w_update_position.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="z_info_branch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="z_info_cargo_content.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="z_info_employee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="z_info_equipment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="z_info_load_unload.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="z_info_penalties.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="z_info_position.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="z_info_price.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="z_info_shipping.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="z_info_tech_service.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

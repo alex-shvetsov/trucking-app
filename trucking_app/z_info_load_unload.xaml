@@ -1,0 +1,87 @@
+﻿<Window x:Class="trucking_app.z_info_load_unload"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:trucking_app"
+        mc:Ignorable="d"
+        Title="z_info_load_unload" Height="350" Width="400"
+        WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Width="392">
+        <Grid Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".4*"/>
+                <ColumnDefinition Width=".6*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" Margin="10"
+                   VerticalAlignment="Center">Код:</TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="0" Margin="10"
+                   VerticalAlignment="Center">Тип:</TextBlock>
+            <TextBlock Grid.Row="2" Grid.Column="0" Margin="10"
+                   VerticalAlignment="Center">Местоположение:</TextBlock>
+            <TextBlock Grid.Row="3" Grid.Column="0" Margin="10"
+                   VerticalAlignment="Center">Исполнитель:</TextBlock>
+            <TextBlock Grid.Row="4" Grid.Column="0" Margin="10"
+                   VerticalAlignment="Center">Ответств . лицо:</TextBlock>
+            <TextBlock Grid.Row="5" Grid.Column="0" Margin="10"
+                   VerticalAlignment="Center">Механизм:</TextBlock>
+            <TextBlock Grid.Row="6" Grid.Column="0" Margin="10"
+                   VerticalAlignment="Center">Владелец механизма:</TextBlock>
+            <TextBlock Grid.Row="7" Grid.Column="0" Margin="10"
+                   VerticalAlignment="Center">Способ:</TextBlock>
+            <TextBlock Grid.Row="8" Grid.Column="0" Margin="10"
+                   VerticalAlignment="Center">Ожид. время приб.:</TextBlock>
+            <TextBlock Grid.Row="9" Grid.Column="0" Margin="10"
+                   VerticalAlignment="Center">Ожид. время убыт.:</TextBlock>
+            <TextBlock Grid.Row="10" Grid.Column="0" Margin="10"
+                   VerticalAlignment="Center">Факт. время приб.:</TextBlock>
+            <TextBlock Grid.Row="11" Grid.Column="0" Margin="10"
+                   VerticalAlignment="Center">Факт. время убыт.:</TextBlock>
+            <TextBlock Grid.Row="12" Grid.Column="0" Margin="10"
+                   VerticalAlignment="Center">Время доп. оп-й:</TextBlock>
+
+            <TextBlock Grid.Row="0" Grid.Column="1" Margin="10" x:Name="codeTB"
+                   VerticalAlignment="Center"></TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="1" Margin="10" x:Name="typeTB"
+                   VerticalAlignment="Center"></TextBlock>
+            <TextBlock Grid.Row="2" Grid.Column="1" Margin="10" x:Name="locTB"
+                   VerticalAlignment="Center"></TextBlock>
+            <TextBlock Grid.Row="3" Grid.Column="1" Margin="10" x:Name="execTB"
+                   VerticalAlignment="Center"></TextBlock>
+            <TextBlock Grid.Row="4" Grid.Column="1" Margin="10" x:Name="respTB"
+                   VerticalAlignment="Center"></TextBlock>
+            <TextBlock Grid.Row="5" Grid.Column="1" Margin="10" x:Name="mechTB"
+                   VerticalAlignment="Center"></TextBlock>
+            <TextBlock Grid.Row="6" Grid.Column="4" Margin="10" x:Name="mechOwnerTB"
+                   VerticalAlignment="Center"></TextBlock>
+            <TextBlock Grid.Row="7" Grid.Column="4" Margin="10" x:Name="methodTB"
+                   VerticalAlignment="Center"></TextBlock>
+            <TextBlock Grid.Row="8" Grid.Column="1" Margin="10" x:Name="eatTB"
+                   VerticalAlignment="Center"></TextBlock>
+            <TextBlock Grid.Row="9" Grid.Column="1" Margin="10" x:Name="edtTB"
+                   VerticalAlignment="Center"></TextBlock>
+            <TextBlock Grid.Row="10" Grid.Column="1" Margin="10" x:Name="aatTB"
+                   VerticalAlignment="Center"></TextBlock>
+            <TextBlock Grid.Row="11" Grid.Column="1" Margin="10" x:Name="adtTB"
+                   VerticalAlignment="Center"></TextBlock>
+            <TextBlock Grid.Row="12" Grid.Column="1" Margin="10" x:Name="extraTB"
+                   VerticalAlignment="Center"></TextBlock>
+        </Grid>
+    </ScrollViewer>
+</Window>

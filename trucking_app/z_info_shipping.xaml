@@ -1,0 +1,120 @@
+﻿<Window x:Class="trucking_app.z_info_shipping"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:trucking_app"
+        mc:Ignorable="d"
+        Title="Информация о заказе" Height="350" Width="400"
+        WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Width="392">
+        <Grid Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".4*"/>
+                <ColumnDefinition Width=".6*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" Margin="10"
+                   VerticalAlignment="Center">Код груза:</TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="0" Margin="10"
+                   VerticalAlignment="Center">Содержимое груза:</TextBlock>
+            <TextBlock Grid.Row="2" Grid.Column="0" Margin="10"
+                   VerticalAlignment="Center">Класс груза:</TextBlock>
+            <TextBlock Grid.Row="3" Grid.Column="0" Margin="10"
+                   VerticalAlignment="Center">Кузов/авто:</TextBlock>
+            <TextBlock Grid.Row="4" Grid.Column="0" Margin="10"
+                   VerticalAlignment="Center">Прицеп:</TextBlock>
+            <TextBlock Grid.Row="5" Grid.Column="0" Margin="10"
+                   VerticalAlignment="Center">Контейнер:</TextBlock>
+            <TextBlock Grid.Row="6" Grid.Column="0" Margin="10"
+                   VerticalAlignment="Center">Масса контейнера:</TextBlock>
+            <TextBlock Grid.Row="7" Grid.Column="0" Margin="10"
+                   VerticalAlignment="Center">Масса брутто:</TextBlock>
+            <TextBlock Grid.Row="8" Grid.Column="0" Margin="10"
+                   VerticalAlignment="Center">Отправитель:</TextBlock>
+            <TextBlock Grid.Row="9" Grid.Column="0" Margin="10"
+                   VerticalAlignment="Center">Получатель:</TextBlock>
+            <TextBlock Grid.Row="10" Grid.Column="0" Margin="10"
+                   VerticalAlignment="Center">Водитель:</TextBlock>
+            <TextBlock Grid.Row="11" Grid.Column="0" Margin="10"
+                   VerticalAlignment="Center">Код погрузки:</TextBlock>
+            <TextBlock Grid.Row="12" Grid.Column="0" Margin="10"
+                   VerticalAlignment="Center">Код разгрузки:</TextBlock>
+            <TextBlock Grid.Row="13" Grid.Column="0" Margin="10"
+                   VerticalAlignment="Center">Срочно:</TextBlock>
+            <TextBlock Grid.Row="14" Grid.Column="0" Margin="10"
+                   VerticalAlignment="Center">Стоимость:</TextBlock>
+            <TextBlock Grid.Row="15" Grid.Column="0" Margin="10"
+                   VerticalAlignment="Center">Неустойка:</TextBlock>
+            <TextBlock Grid.Row="16" Grid.Column="0" Margin="10"
+                   VerticalAlignment="Center">Итого:</TextBlock>
+            <TextBlock Grid.Row="17" Grid.Column="0" Margin="10"
+                   VerticalAlignment="Center">Местоположение:</TextBlock>
+            <TextBlock Grid.Row="18" Grid.Column="0" Margin="10"
+                   VerticalAlignment="Center">Доставлен:</TextBlock>
+
+            <TextBlock Grid.Row="0" Grid.Column="1" Margin="10" x:Name="cargoidTB"
+                   VerticalAlignment="Center"></TextBlock>
+            <Button Grid.Row="1" Grid.Column="1" Margin="10" x:Name="cargoContentButton"
+                    VerticalAlignment="Center" Height="20" Width="100" HorizontalAlignment="Left"
+                    Click="cargoContentButton_Click">Показать</Button>
+            <TextBlock Grid.Row="2" Grid.Column="1" Margin="10" x:Name="cargoClassTB"
+                   VerticalAlignment="Center"></TextBlock>
+            <TextBlock Grid.Row="3" Grid.Column="1" Margin="10" x:Name="autoTB"
+                   VerticalAlignment="Center"></TextBlock>
+            <TextBlock Grid.Row="4" Grid.Column="1" Margin="10" x:Name="trailerTB"
+                   VerticalAlignment="Center"></TextBlock>
+            <TextBlock Grid.Row="5" Grid.Column="1" Margin="10" x:Name="containerTB"
+                   VerticalAlignment="Center"></TextBlock>
+            <TextBlock Grid.Row="6" Grid.Column="4" Margin="10" x:Name="contWeightTB"
+                   VerticalAlignment="Center"></TextBlock>
+            <TextBlock Grid.Row="7" Grid.Column="4" Margin="10" x:Name="grossWeightTB"
+                   VerticalAlignment="Center"></TextBlock>
+            <TextBlock Grid.Row="8" Grid.Column="1" Margin="10" x:Name="senderTB"
+                   VerticalAlignment="Center"></TextBlock>
+            <TextBlock Grid.Row="9" Grid.Column="1" Margin="10" x:Name="receiverTB"
+                   VerticalAlignment="Center"></TextBlock>
+            <TextBlock Grid.Row="10" Grid.Column="1" Margin="10" x:Name="driverTB"
+                   VerticalAlignment="Center"></TextBlock>
+            <TextBlock Grid.Row="11" Grid.Column="1" Margin="10" x:Name="loadTB"
+                   VerticalAlignment="Center"></TextBlock>
+            <TextBlock Grid.Row="12" Grid.Column="1" Margin="10" x:Name="unloadTB"
+                   VerticalAlignment="Center"></TextBlock>
+            <TextBlock Grid.Row="13" Grid.Column="4" Margin="10" x:Name="urgeTB"
+                   VerticalAlignment="Center"></TextBlock>
+            <Button Grid.Row="14" Grid.Column="4" Margin="10" x:Name="priceButton"
+                   VerticalAlignment="Center" Height="20" Width="100" HorizontalAlignment="Left"
+                    Click="priceButton_Click">Показать</Button>
+            <Button Grid.Row="15" Grid.Column="1" Margin="10" x:Name="penaltyButton"
+                   VerticalAlignment="Center" Height="20" Width="100" HorizontalAlignment="Left"
+                    Click="penaltyButton_Click">Показать</Button>
+            <TextBlock Grid.Row="16" Grid.Column="1" Margin="10" x:Name="totalTB"
+                   VerticalAlignment="Center"></TextBlock>
+            <TextBlock Grid.Row="17" Grid.Column="1" Margin="10" x:Name="locTB"
+                   VerticalAlignment="Center"></TextBlock>
+            <TextBlock Grid.Row="18" Grid.Column="1" Margin="10" x:Name="deliveredTB"
+                   VerticalAlignment="Center"></TextBlock>
+        </Grid>
+    </ScrollViewer>
+</Window>

@@ -1,0 +1,62 @@
+﻿<Window x:Class="trucking_app.w_price_report"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:trucking_app"
+        mc:Ignorable="d"
+        Title="Расчет стоимости" Height="400" Width="400"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".4*"/>
+            <ColumnDefinition Width=".6*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"
+                   Margin="5">За трансп. услуги:</TextBlock>
+        <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"
+                   Margin="5">Погруз.-разгруз. работы:</TextBlock>
+        <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"
+                   Margin="5">Сверх. простой (загр.):</TextBlock>
+        <TextBlock Grid.Row="3" Grid.Column="0" VerticalAlignment="Center"
+                   Margin="5">Сверх. простой (разгр.):</TextBlock>
+        <TextBlock Grid.Row="4" Grid.Column="0" VerticalAlignment="Center"
+                   Margin="5">За срочность:</TextBlock>
+        <TextBlock Grid.Row="5" Grid.Column="0" VerticalAlignment="Center"
+                   Margin="5">За спец. транспорт:</TextBlock>
+        <TextBlock Grid.Row="6" Grid.Column="0" VerticalAlignment="Center"
+                   Margin="5">Прочие доплаты:</TextBlock>
+        
+
+        <TextBox Grid.Row="0" Grid.Column="2" x:Name="serviceTextBox" Height="22"
+                 HorizontalAlignment="Stretch" Margin="8"/>
+        <TextBox Grid.Row="1" Grid.Column="2" x:Name="loadunloadTextBox" Height="22"
+                 HorizontalAlignment="Stretch" Margin="8"/>
+        <TextBox Grid.Row="2" Grid.Column="2" x:Name="overtloadTextBox" Height="22"
+                 HorizontalAlignment="Stretch" Margin="8"/>
+        <TextBox Grid.Row="3" Grid.Column="2" x:Name="overtunloadTextBox" Height="22"
+                 HorizontalAlignment="Stretch" Margin="8"/>
+        <TextBox Grid.Row="4" Grid.Column="2" x:Name="urgeTextBox" Height="22"
+                 HorizontalAlignment="Stretch" Margin="8"/>
+        <TextBox Grid.Row="5" Grid.Column="2" x:Name="specTranTextBox" Height="22"
+                 HorizontalAlignment="Stretch" Margin="8"/>
+        <TextBox Grid.Row="6" Grid.Column="2" x:Name="otherTextBox" Height="22"
+                 HorizontalAlignment="Stretch" Margin="8"/>
+
+        <Button x:Name="okButton" Width="90" Margin="8"
+                Click="okButton_Click" Grid.Row="8" Grid.Column="2"
+                HorizontalAlignment="Right">OK</Button>
+    </Grid>
+</Window>

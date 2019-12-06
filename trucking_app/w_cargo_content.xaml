@@ -1,0 +1,78 @@
+﻿<Window x:Class="trucking_app.w_cargo_content"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:trucking_app"
+        mc:Ignorable="d"
+        Title="Содержимое груза" Height="450" Width="700"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Window_Loaded">
+    <Grid Margin="10" x:Name="grid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".7*"/>
+            <ColumnDefinition Width="130"/>
+            <ColumnDefinition Width=".4*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+
+        <ListBox Grid.Row="0" Grid.RowSpan="8" Grid.Column="0"
+                 x:Name="mainLB" Margin="0,0,10,0">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="5">
+                        <TextBlock FontSize="16" Text="{Binding Path=Name}"/>
+                        <TextBlock Text="{Binding Path=Quantity}"/>
+                        <TextBlock Text="{Binding Path=UnitWeight}"/>
+                        <TextBlock Text="{Binding Path=Wrapper}"/>
+                        <TextBlock Text="{Binding Path=WrapperWeight}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <TextBlock Grid.Row="0" Grid.Column="1" VerticalAlignment="Center"
+                   Margin="5">Наименование:</TextBlock>
+        <TextBlock Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"
+                   Margin="5">Количество:</TextBlock>
+        <TextBlock Grid.Row="2" Grid.Column="1" VerticalAlignment="Center"
+                   Margin="5">Масса единицы:</TextBlock>
+        <TextBlock Grid.Row="3" Grid.Column="1" VerticalAlignment="Center"
+                   Margin="5">Упаковка:</TextBlock>
+        <TextBlock Grid.Row="4" Grid.Column="1" VerticalAlignment="Center"
+                   Margin="5">Масса упаковки:</TextBlock>
+
+        <TextBox Grid.Row="0" Grid.Column="2" x:Name="nameTextBox" Height="22"
+                 HorizontalAlignment="Stretch"/>
+        <TextBox Grid.Row="1" Grid.Column="2" x:Name="quanTextBox" Height="22"
+                 HorizontalAlignment="Stretch"/>
+        <TextBox Grid.Row="2" Grid.Column="2" x:Name="umassTextBox" Height="22"
+                 HorizontalAlignment="Stretch"/>
+        <TextBox Grid.Row="3" Grid.Column="2" x:Name="wrapperTextBox" Height="22"
+                 HorizontalAlignment="Stretch"/>
+        <TextBox Grid.Row="4" Grid.Column="2" x:Name="wrapMassTextBox" Height="22"
+                 HorizontalAlignment="Stretch"/>
+
+        <StackPanel Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Orientation="Horizontal"
+                    HorizontalAlignment="Right">
+            <Button x:Name="removeButton" Margin="8" Width="90"
+                    Click="removeButton_Click">Удалить</Button>
+            <Button x:Name="clearButton" Margin="0,8" Width="90"
+                    Click="clearButton_Click">Очистить</Button>
+            <Button x:Name="addButton" Margin="8,8,0,8" Width="90"
+                    Click="addButton_Click">Добавить</Button>
+        </StackPanel>
+
+        <Button x:Name="okButton" Width="90" Margin="0,8"
+                Click="okButton_Click" Grid.Row="7" Grid.Column="2"
+                HorizontalAlignment="Right">OK</Button>
+    </Grid>
+</Window>
